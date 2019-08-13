@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="useMapperCommentGenerator" value="false"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="tk.mybatis.mapper.common.Mapper"/>
+            <property name="caseSensitive" value="true"/>
+            <property name="forceAnnotation" value="true"/>
+            <property name="beginningDelimiter" value="`"/>
+            <property name="endingDelimiter" value="`"/>
+        </plugin>
+        <!--第一个要修改的地方，mysql连接信息-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/came_mt_v0"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+        <!--第2个要修改的地方，模型-->
+        <javaModelGenerator targetPackage="cn.org.yxzb.camemt.pojo" targetProject="src/main/java"/>
+        <!--第3个要修改的地方 ,mapper接口-->
+        <sqlMapGenerator targetPackage="mapper"  targetProject="src/main/resources"/>
+        <!--第4个要修改的地方 ，xml-->
+        <javaClientGenerator targetPackage="cn.org.yxzb.camemt.mapper" targetProject="src/main/java" type="XMLMAPPER" />
+
+
+        <!--第5个要修改的地方这是表名字，表id，也可以设置生成mapper的别名-->
+        <table tableName="ts_user" >
+          <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ts_role" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+        <table tableName="ts_permission" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
+
+    </context>
+</generatorConfiguration>

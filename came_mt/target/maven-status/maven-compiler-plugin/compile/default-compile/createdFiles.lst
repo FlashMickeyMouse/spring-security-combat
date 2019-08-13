@@ -1,0 +1,12 @@
+cn\org\yxzb\camemt\security\config\SecurityConfig.class
+cn\org\yxzb\camemt\mapper\TsRoleMapper.class
+cn\org\yxzb\camemt\pojo\TsPermission.class
+cn\org\yxzb\camemt\pojo\TsRole.class
+cn\org\yxzb\camemt\mapper\TsPermissionMapper.class
+cn\org\yxzb\camemt\pojo\TsUser.class
+cn\org\yxzb\camemt\service\TsUserService.class
+cn\org\yxzb\camemt\service\TsPermissionService.class
+cn\org\yxzb\camemt\controller\TestController.class
+cn\org\yxzb\camemt\mapper\TsUserMapper.class
+cn\org\yxzb\camemt\service\TsRoleService.class
+cn\org\yxzb\camemt\CameMtApplication.class
